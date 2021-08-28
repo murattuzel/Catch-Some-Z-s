@@ -6,4 +6,9 @@
     <string name="login_continue">Continue</string>
     <string name="login_username_error_message">Must include at least 2 characters </string>
     <string name="login_password_error_message">Must include at least 6 characters with 1 uppercase and 1 digit </string>
+    <string name="home_header_meditations">Meditations</string>
+    <string name="home_header_stories">Stories</string>
+    <string name="home_banner_text">Look %s. Pretty, isn’t it? Perfectly balanced. As all things should be.</string>
+    <string name="meditation_detail_title">Meditation Detail</string>
+    <string name="story_detail_title">Story Detail</string>
 </resources>

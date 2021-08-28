@@ -4,6 +4,7 @@ import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import com.murattuzel.catchsomezs.BuildConfig
+import com.murattuzel.catchsomezs.data.ContentService
 import com.murattuzel.catchsomezs.internal.util.api.ErrorHandlingInterceptor
 import dagger.Module
 import dagger.Provides
@@ -16,6 +17,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.create
 import javax.inject.Singleton
 
 @Module
@@ -77,4 +79,8 @@ object NetworkModule {
             .client(client)
             .build()
     }
+
+    @Provides
+    @Singleton
+    internal fun providesContentService(retrofit: Retrofit): ContentService = retrofit.create()
 }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="uiModel"
+            type="com.murattuzel.catchsomezs.domain.model.MeditationUiModel" />
+
+        <variable
+            name="viewModel"
+            type="com.murattuzel.catchsomezs.ui.home.HomeViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="156dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="@{() -> viewModel.onMeditationClick.invoke(uiModel)}"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="219dp"
+            android:scaleType="centerCrop"
+            app:loadImageUrl="@{uiModel.imageUrl}"
+            tools:src="@tools:sample/avatars" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:text="@{uiModel.title}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:text="@tools:sample/lorem[5]"
+            tools:textColor="@color/black" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:alpha="0.7"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{uiModel.content}"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:text="@tools:sample/lorem[5]"
+            tools:textColor="@color/black" />
+
+    </LinearLayout>
+
+</layout>

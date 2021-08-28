@@ -12,7 +12,9 @@
 
         <action
             android:id="@+id/action_login_to_home"
-            app:destination="@id/homeFragment">
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left">
 
             <argument
                 android:name="arg_username"
@@ -31,6 +33,63 @@
         <argument
             android:name="arg_username"
             app:argType="string"
+            app:nullable="false" />
+
+
+        <action
+            android:id="@+id/action_home_to_detail"
+            app:destination="@id/mediaDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left">
+
+            <argument
+                android:name="arg_toolbar_title"
+                app:argType="integer"
+                app:nullable="false" />
+
+            <argument
+                android:name="arg_header"
+                app:argType="string"
+                app:nullable="false" />
+
+            <argument
+                android:name="arg_description"
+                app:argType="string"
+                app:nullable="false" />
+
+            <argument
+                android:name="arg_date"
+                app:argType="long"
+                app:nullable="false" />
+
+        </action>
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/mediaDetailFragment"
+        android:name="com.murattuzel.catchsomezs.ui.mediadetail.MediaDetailFragment"
+        tools:layout="@layout/fragment_media_detail">
+
+        <argument
+            android:name="arg_toolbar_title"
+            app:argType="integer"
+            app:nullable="false" />
+
+        <argument
+            android:name="arg_header"
+            app:argType="string"
+            app:nullable="false" />
+
+        <argument
+            android:name="arg_description"
+            app:argType="string"
+            app:nullable="false" />
+
+        <argument
+            android:name="arg_date"
+            app:argType="long"
             app:nullable="false" />
 
     </fragment>

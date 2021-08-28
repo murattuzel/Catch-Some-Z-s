@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.murattuzel.catchsomezs">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".main.MainApplication"
         android:allowBackup="true"
