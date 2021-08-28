@@ -25,7 +25,7 @@ class MediaDetailViewModel @AssistedInject constructor(
             toolbarTitleRes = titleRes,
             header = header,
             description = description,
-            date = Instant.ofEpochMilli(date)
+            date = Instant.ofEpochSecond(date)
                 .atZone(ZoneId.systemDefault())
                 .toLocalDateTime()
         )

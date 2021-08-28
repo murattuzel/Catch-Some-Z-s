@@ -7,6 +7,7 @@ import androidx.navigation.fragment.navArgs
 import com.murattuzel.catchsomezs.R
 import com.murattuzel.catchsomezs.base.BaseFragment
 import com.murattuzel.catchsomezs.databinding.FragmentMediaDetailBinding
+import com.murattuzel.catchsomezs.internal.util.ExoPlayerManager
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -18,6 +19,9 @@ class MediaDetailFragment(
 
     @Inject
     lateinit var viewModelFactory: MediaDetailViewModelFactory
+
+    @Inject
+    lateinit var exoplayerManager: ExoPlayerManager
 
     override val viewModel: MediaDetailViewModel by viewModels {
         MediaDetailViewModel.provideFactory(
@@ -33,5 +37,10 @@ class MediaDetailFragment(
         super.onViewCreated(view, savedInstanceState)
 
         binder.mediaDetailToolBar.setNavigationOnClickListener { viewModel.navigateBack() }
+        viewLifecycleOwner.lifecycle.addObserver(exoplayerManager)
+        exoplayerManager.inject(
+            mediaUrl = "https://d2r0ihkco3hemf.cloudfront.net/bgxupraW2spUpr_y2.mp3",
+            controllerView = binder.controllerView
+        )
     }
 }
