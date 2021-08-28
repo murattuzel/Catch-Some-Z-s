@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Catch Some Z\'s</string>
+    <string name="login_title">Sign in to Meditopia</string>
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="login_continue">Continue</string>
+    <string name="login_username_error_message">Must include at least 2 characters </string>
+    <string name="login_password_error_message">Must include at least 6 characters with 1 uppercase and 1 digit </string>
 </resources>

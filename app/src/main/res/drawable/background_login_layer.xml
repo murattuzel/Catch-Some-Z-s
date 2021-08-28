@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <bitmap android:src="@drawable/image_login_background" />
+    </item>
+
+    <item>
+        <color android:color="@color/black_a50" />
+    </item>
+
+    <item android:top="44dp">
+        <color android:color="@color/white" />
+    </item>
+
+</layer-list>

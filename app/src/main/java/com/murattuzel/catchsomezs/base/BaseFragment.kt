@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
+import com.murattuzel.catchsomezs.BR
 import com.murattuzel.catchsomezs.internal.extension.observeNonNull
 import com.murattuzel.catchsomezs.internal.util.NavigationCommand
 import java.lang.reflect.ParameterizedType
@@ -29,8 +30,7 @@ abstract class BaseFragment<VM : BaseViewModel, B : ViewDataBinding> : Fragment(
     ): View? {
         binder = DataBindingUtil.inflate(inflater, layoutId, container, false)
         binder.lifecycleOwner = viewLifecycleOwner
-        // enable after data binding variables created
-        // binder.setVariable(BR.viewModel, viewModel)
+        binder.setVariable(BR.viewModel, viewModel)
 
         observeNavigation()
 
