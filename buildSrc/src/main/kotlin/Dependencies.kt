@@ -3,7 +3,6 @@ object Dependencies {
     const val timber = "com.jakewharton.timber:timber:4.7.1"
     const val threeTenAbp = "com.jakewharton.threetenabp:threetenabp:1.3.1"
     const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.7"
-    const val chucker = "com.github.chuckerteam.chucker:library:3.4.0"
     const val coil = "io.coil-kt:coil:1.3.2"
 
     object Kotlin {
@@ -76,12 +75,20 @@ object Dependencies {
         const val bom = "com.squareup.okhttp3:okhttp-bom:4.9.1"
         const val okHttp = "com.squareup.okhttp3:okhttp"
         const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor"
+        const val mockWebServer = "com.squareup.okhttp3:mockwebserver"
+
     }
 
     object ExoPlayer {
         private const val version = "2.15.0"
         const val core = "com.google.android.exoplayer:exoplayer-core:$version"
         const val ui = "com.google.android.exoplayer:exoplayer-ui:$version"
+    }
+
+    object Chucker {
+        private const val version = "3.4.0"
+        const val debug = "com.github.chuckerteam.chucker:library:$version"
+        const val release = "com.github.chuckerteam.chucker:library-no-op:$version"
     }
 
     object Test {

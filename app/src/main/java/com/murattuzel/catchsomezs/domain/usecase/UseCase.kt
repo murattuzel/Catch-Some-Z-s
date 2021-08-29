@@ -1,8 +1,8 @@
 package com.murattuzel.catchsomezs.domain.usecase
 
-import com.murattuzel.catchsomezs.data.Failure
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.io.IOException
 
 abstract class UseCase<DataSourceType, DomainType, Params> {
 
@@ -15,8 +15,8 @@ abstract class UseCase<DataSourceType, DomainType, Params> {
             try {
                 Result.success(buildUseCase(params))
                     .map { map(it) }
-            } catch (failure: Failure) {
-                Result.failure(failure)
+            } catch (exception: IOException) {
+                Result.failure(exception)
             }
         }
 }

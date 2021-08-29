@@ -89,12 +89,14 @@ dependencies {
     implementation(platform(Dependencies.OkHttp.bom))
     implementation(Dependencies.OkHttp.okHttp)
     implementation(Dependencies.OkHttp.loggingInterceptor)
+    testImplementation(Dependencies.OkHttp.mockWebServer)
 
     implementation(Dependencies.ExoPlayer.core)
     implementation(Dependencies.ExoPlayer.ui)
 
-    debugImplementation(Dependencies.chucker)
     debugImplementation(Dependencies.leakCanary)
+    debugImplementation(Dependencies.Chucker.debug)
+    releaseImplementation(Dependencies.Chucker.release)
 
     testImplementation(Dependencies.Test.junit)
     testImplementation(Dependencies.Test.mockK)
